@@ -117,12 +117,12 @@ void exibirMenuPrincipal(int *Opcao)
 // Retorna um ponteiro para a memória alocada ou NULL em caso de falha.
 struct territorio* alocarMapa()
 {
-	return calloc(MaxTerritorios, sizeof(struct territorio));
+	return (struct territorio*) calloc(MaxTerritorios, sizeof(struct territorio));
 }
 
 struct Missoes* alocarMissoes()
 {
-	return malloc(MaxMissoes * sizeof(struct Missoes));	
+	return (struct Missoes*) malloc(MaxMissoes * sizeof(struct Missoes));
 }
 
 
@@ -587,6 +587,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
     if(SemJogador ==0 || *MissaoCumprida == 1)
 	{
 	    int conquistados = 0;
+	    int derrota = 0;
 	    switch (missostruct[0].ID)
 	    {
 		
@@ -675,7 +676,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
 		    }
 	    break;
 	    case 3:
-	    int derrota = 0;
+	    	
 		    for (int contador = 0; contador < MaxTerritorios; contador++)
 		    {
 			    if(strcmp(Territorios[contador].cor, missostruct[0].sofredor) == 0)
