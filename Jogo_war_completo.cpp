@@ -101,11 +101,11 @@ void LimparBuffer ()
 // Imprime na tela o menu de ações disponíveis para o jogador.
 void exibirMenuPrincipal(int *Opcao)
 {	
-	printf("-----MENU DE AÇÕES-----\n");
+	printf("-----MENU DE ACOES-----\n");
 	printf("1. Atacar\n");
-	printf("2. Verificar Missão\n");
+	printf("2. Verificar Missao\n");
 	printf("3. Sair\n");
-	printf("Escolha sua ação: \n");
+	printf("Escolha sua acao: \n");
 	scanf("%d", Opcao);
 	LimparBuffer();
 	
@@ -201,7 +201,7 @@ void FasedeAtaque (struct territorio *Territorios, struct Missoes *missao, int *
 	LimparBuffer();
 	if (atacante < 1 || atacante > 5 )
 	{
-		printf("\n\nValor inválido!\n");
+		printf("\n\nValor invalido!\n");
 		printf("você será levado a fase de ataque novamente\n\n");
 		printf("Digite ENTER para continuar...\n");
 		getchar();
@@ -228,7 +228,7 @@ void FasedeAtaque (struct territorio *Territorios, struct Missoes *missao, int *
 					getchar();
 				break;
 				case 2:
-					printf("\nvocê será levado a fase de ataque novamente\n");
+					printf("\nvoce sera levado a fase de ataque novamente\n");
 					printf("Digite ENTER para continuar...\n");
 					getchar();
 					FasedeAtaque(Territorios, missao, missaocumprida);
@@ -236,7 +236,7 @@ void FasedeAtaque (struct territorio *Territorios, struct Missoes *missao, int *
 				break;
 				default:
 					printf("\nValor invalido!\n");
-					printf("\nvocê será levado a fase de ataque novamente\n");
+					printf("\nvoce sera levado a fase de ataque novamente\n");
 					printf("Digite ENTER para continuar...\n");
 					getchar();
 					FasedeAtaque(Territorios, missao, missaocumprida);
@@ -255,8 +255,8 @@ void FasedeAtaque (struct territorio *Territorios, struct Missoes *missao, int *
 		LimparBuffer();
 		if (defensor<1 || defensor > 5 || atacante == defensor || strcmp(Territorios[atacante - 1].cor, Territorios[defensor - 1].cor) == 0)
 		{
-			printf("\n\nValor inválido!\n");
-			printf("você será levado a fase de ataque novamente\n\n");
+			printf("\n\nValor invalido!\n");
+			printf("voce sera levado a fase de ataque novamente\n\n");
 			printf("Digite ENTER para continuar...\n");
 			getchar();
 			FasedeAtaque(Territorios, missao, missaocumprida);
@@ -266,7 +266,7 @@ void FasedeAtaque (struct territorio *Territorios, struct Missoes *missao, int *
 		{
 			if(*missaocumprida != 1)
 			{
-				if (strcmp(missao[0].objetivo, "Conquistar") == 0 || strcmp(missao[0].objetivo, "Defender território por 3 rodadas") == 0 || strcmp(missao[0].objetivo, "Conquistar continente") == 0 || strcmp(missao[0].objetivo, "Eliminar tropas do exercito") == 0)
+				if (strcmp(missao[0].objetivo, "Conquistar") == 0 || strcmp(missao[0].objetivo, "Defender territorio por 3 rodadas") == 0 || strcmp(missao[0].objetivo, "Conquistar continente") == 0 || strcmp(missao[0].objetivo, "Eliminar tropas do exercito") == 0)
 				{
 					if(strcmp(Territorios[defensor - 1].cor, missao[0].ExercitoEscolhido) != 0)
 					{
@@ -319,7 +319,7 @@ void FasedeAtaque (struct territorio *Territorios, struct Missoes *missao, int *
 								getchar();
 							break;
 							case 2:
-								printf("\nvocê será levado a fase de ataque novamente\n");
+								printf("\nvoce sera levado a fase de ataque novamente\n");
 								printf("Digite ENTER para continuar...\n");
 								getchar();
 								FasedeAtaque(Territorios, missao, missaocumprida);
@@ -491,7 +491,7 @@ void atribuirMissao(struct territorio *Territorios,struct Missoes *missostruct, 
     }
     case 4:
 	{
-	    strncpy(missostruct[0].objetivo, "Defender território por 3 rodadas", MaxString - 1);
+	    strncpy(missostruct[0].objetivo, "Defender territorio por 3 rodadas", MaxString - 1);
 	    missostruct[0].objetivo[MaxString - 1] = '\0';
 	
 	    strncpy(missostruct[0].sofredor, "Nenhum", MaxString - 1);
@@ -538,7 +538,7 @@ void exibirMisao(struct Missoes *missao, struct territorio *Territorios, int *Mi
 			
 	if (*MissaoCumprida == 0)
 	{
-		printf("---------Sua missão (Exercito %s)---------\n\n", missao[0].ExercitoEscolhido);
+		printf("---------Sua missao (Exercito %s)---------\n\n", missao[0].ExercitoEscolhido);
 		printf(" -> Missão: %s", missao[0].objetivo);
 		if (strcmp(missao[0].sofredor, "Nenhum") == 0)
 		{
@@ -552,7 +552,7 @@ void exibirMisao(struct Missoes *missao, struct territorio *Territorios, int *Mi
 	}
 	else if(*MissaoCumprida == 1)
 	{
-		printf("---------Sua missão (Exercito %s)---------\n\n", missao[0].ExercitoEscolhido);
+		printf("---------Sua missao (Exercito %s)---------\n\n", missao[0].ExercitoEscolhido);
 		printf(" -> Missão: %s", missao[0].objetivo);
 		if (strcmp(missao[0].sofredor, "Nenhum") == 0)
 		{
@@ -601,7 +601,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
 		    }
 		    if(conquistados >= 4 )
 		    {
-			    printf("Missão cumprida com sucesso!!\n");
+			    printf("Missao cumprida com sucesso!!\n");
 			    *MissaoCumprida = 1;
 			    printf("Digite ENTER para continuar");
 			    getchar();
@@ -611,7 +611,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
 		    {
 				if (naoaparecer == 0)
 				{
-			    	printf("Continue tentando, voce ainda não cumpriu a missao\n");
+			    	printf("Continue tentando, voce ainda nao cumpriu a missao\n");
 			    	printf("Digite ENTER para continuar");
 			    	getchar();
 				}
@@ -624,7 +624,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
     	case 1:
 	    	if(RodadasAtaque >= 2 )
 		    {
-			    printf("Missão cumprida com sucesso!!\n");
+			    printf("Missao cumprida com sucesso!!\n");
 			    *MissaoCumprida = 1;
 			    printf("Digite ENTER para continuar");
 			    getchar();
@@ -634,7 +634,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
 		    {
 		 	    if (naoaparecer == 0)
 				{
-			    	printf("Continue tentando, voce ainda não cumpriu a missao\n");
+			    	printf("Continue tentando, voce ainda nao cumpriu a missao\n");
 			    	printf("Digite ENTER para continuar");
 			    	getchar();
 				}
@@ -655,7 +655,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
 		    }
 		    if(RodadasAtaque > 0 )
 		    {
-			    printf("Missão cumprida com sucesso!!\n");
+			    printf("Missao cumprida com sucesso!!\n");
 			    *MissaoCumprida = 1;
 			    printf("Digite ENTER para continuar");
 			    getchar();
@@ -664,7 +664,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
 		    {
 			    if (naoaparecer == 0)
 				{
-			    	printf("Continue tentando, voce ainda não cumpriu a missao\n");
+			    	printf("Continue tentando, voce ainda nao cumpriu a missao\n");
 			    	printf("Digite ENTER para continuar");
 			    	getchar();
 				}
@@ -686,7 +686,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
 		    }
 		    if(derrota != 1 )
 		    {
-			    printf("Missão cumprida com sucesso!!\n");
+			    printf("Missao cumprida com sucesso!!\n");
 			    *MissaoCumprida = 1;
 			    printf("Digite ENTER para continuar");
 			    getchar();
@@ -695,7 +695,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
 		    {
 			    if (naoaparecer == 0)
 				{
-			    	printf("Continue tentando, voce ainda não cumpriu a missao\n");
+			    	printf("Continue tentando, voce ainda nao cumpriu a missao\n");
 			    	printf("Digite ENTER para continuar");
 			    	getchar();
 				}
@@ -709,7 +709,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
 	    case 4:
 		    if(RodadasDefendidas >= 3 )
 		    {
-			    printf("Missão cumprida com sucesso!!\n");
+			    printf("Missao cumprida com sucesso!!\n");
 			    *MissaoCumprida = 1;
 			    printf("Digite ENTER para continuar");
 			    getchar();
@@ -718,7 +718,7 @@ void verificarVitoria(struct territorio *Territorios,struct Missoes *missostruct
 		    {
 			    if (naoaparecer == 0)
 				{
-			    	printf("Continue tentando, voce ainda não cumpriu a missao\n");
+			    	printf("Continue tentando, voce ainda nao cumpriu a missao\n");
 			    	printf("Digite ENTER para continuar");
 			    	getchar();
 				}
