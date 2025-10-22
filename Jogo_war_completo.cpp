@@ -286,7 +286,7 @@ void FasedeAtaque (struct territorio *Territorios, struct Missoes *missao, int *
 								getchar();
 							break;
 							case 2:
-								printf("\nvocê será levado a fase de ataque novamente\n");
+								printf("\nvoce sera levado a fase de ataque novamente\n");
 								printf("Digite ENTER para continuar...\n");
 								getchar();
 								FasedeAtaque(Territorios, missao, missaocumprida);
@@ -294,7 +294,7 @@ void FasedeAtaque (struct territorio *Territorios, struct Missoes *missao, int *
 							break;
 							default:
 								printf("\nValor invalido!\n");
-								printf("\nvocê será levado a fase de ataque novamente\n");
+								printf("\nvoce sera levado a fase de ataque novamente\n");
 								printf("Digite ENTER para continuar...\n");
 								getchar();
 								FasedeAtaque(Territorios, missao, missaocumprida);
