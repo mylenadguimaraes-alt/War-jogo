@@ -202,7 +202,7 @@ void FasedeAtaque (struct territorio *Territorios, struct Missoes *missao, int *
 	if (atacante < 1 || atacante > 5 )
 	{
 		printf("\n\nValor invalido!\n");
-		printf("você será levado a fase de ataque novamente\n\n");
+		printf("voce sera levado a fase de ataque novamente\n\n");
 		printf("Digite ENTER para continuar...\n");
 		getchar();
 		FasedeAtaque(Territorios, missao, missaocumprida);
@@ -327,7 +327,7 @@ void FasedeAtaque (struct territorio *Territorios, struct Missoes *missao, int *
 							break;
 							default:
 								printf("\nValor invalido!\n");
-								printf("\nvocê será levado a fase de ataque novamente\n");
+								printf("\nvoce sera levado a fase de ataque novamente\n");
 								printf("Digite ENTER para continuar...\n");
 								getchar();
 								FasedeAtaque(Territorios, missao, missaocumprida);
@@ -432,7 +432,7 @@ void simularAtaque(struct territorio *Territorios, struct Missoes *missao, int d
 		}
 	}
 	printf("\n");
-	printf("você será levado a proxima fase\n");
+	printf("voce sera levado a proxima fase\n");
 	printf("Digite ENTER para continuar...\n");
 	getchar();		
 }
@@ -539,7 +539,7 @@ void exibirMisao(struct Missoes *missao, struct territorio *Territorios, int *Mi
 	if (*MissaoCumprida == 0)
 	{
 		printf("---------Sua missao (Exercito %s)---------\n\n", missao[0].ExercitoEscolhido);
-		printf(" -> Missão: %s", missao[0].objetivo);
+		printf(" -> Missao: %s", missao[0].objetivo);
 		if (strcmp(missao[0].sofredor, "Nenhum") == 0)
 		{
 			printf("\n\n");
@@ -553,7 +553,7 @@ void exibirMisao(struct Missoes *missao, struct territorio *Territorios, int *Mi
 	else if(*MissaoCumprida == 1)
 	{
 		printf("---------Sua missao (Exercito %s)---------\n\n", missao[0].ExercitoEscolhido);
-		printf(" -> Missão: %s", missao[0].objetivo);
+		printf(" -> Missao: %s", missao[0].objetivo);
 		if (strcmp(missao[0].sofredor, "Nenhum") == 0)
 		{
 			printf("\n\n");
